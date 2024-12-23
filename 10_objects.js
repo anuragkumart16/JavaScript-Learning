@@ -1,4 +1,6 @@
 // How to declare an object literal
+const my_object = new Object()
+console.log(my_object)
 const my_symbol = Symbol('hehe') //defing a symbol
 const js_user = {
     name: 'Anurag',  // keys are stored as strings, here you are giving it as a variable but the system converts it to a string.
