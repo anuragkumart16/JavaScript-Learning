@@ -19,7 +19,7 @@ console.log(instructor)
 
 
 // JSON 
-{
-    'course':'JS in hindi',
-    'Name':'ANurag'
-}
+// {
+//     'course':'JS in hindi',
+//     'Name':'ANurag'
+// }
