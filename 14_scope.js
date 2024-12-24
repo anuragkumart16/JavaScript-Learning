@@ -12,7 +12,7 @@ if (true){  //what should ideally happen is that if a variable is defined inside
 // console.log(c) //here you will get the output of c 
 
 
-// the globally defined variable is not accessible inside of the block scope and vice versa.
+// the globally defined variable is accessible inside of the block scope but inside scope var is not accessible outside.
 // consider an example
 
 let globalVar = 1
@@ -22,3 +22,14 @@ if (true){
 }
 console.log(globalVar)
 
+// understanding the scope of variable in nested funtions
+function first(){
+    let one  = 1
+    function second(){
+        let two = 2
+        console.log(one)
+    }
+    second()
+    // console.log(two) //it will say that two is not defined as its defined inside the function and variables form inside aren't accessible outside.
+}
+first()
