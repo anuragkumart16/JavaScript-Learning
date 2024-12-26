@@ -39,4 +39,6 @@ const val3 = undefined ?? 10 ?? 20 //whichever value is not null or undefined wi
 // syntax: condition ? true : false
 
 const age = 20
-const isAdult = age >= 18 ? 'Adult' : 'Not Adult' //if the statement is true then the first value is returned else the second value is returned.  
+const isAdult = age >= 18 ? 'Adult' : 'Not Adult' //if the statement is true then the first value is returned else the second value is returned.
+
+// ternary operators are used for assigning a value not for controling the flow in loop
