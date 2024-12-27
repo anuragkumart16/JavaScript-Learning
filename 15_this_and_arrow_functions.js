@@ -33,7 +33,7 @@ const my_function = () =>{
 my_function()
 
 
-const addtwonums = (num1,num2) =>{ //explicit return function
+const addtwonums = (num1,num2) =>{ //explicit return function  , here is the need of return
     return num1+num2
 }
 console.log(addtwonums(1,4))
@@ -49,3 +49,35 @@ console.log(my_implicit_function(1,3))
 
 const another = (name) => ({name : name})
 console.log(another('Anurag'));
+
+
+
+const books = [
+    {
+        name: 'To Kill a Mockingbird',
+        publishingDate: '1960-07-11',
+        genre: 'Fiction',
+        author: 'Harper Lee'
+    },
+    {
+        name: '1984',
+        publishingDate: '1949-06-08',
+        genre: 'Dystopian',
+        author: 'George Orwell'
+    },
+    {
+        name: 'The Great Gatsby',
+        publishingDate: '1925-04-10',
+        genre: 'Tragedy',
+        author: 'F. Scott Fitzgerald'
+    },
+    {
+        name: 'The Catcher in the Rye',
+        publishingDate: '1951-07-16',
+        genre: 'Fiction',
+        author: 'J.D. Salinger'
+    }
+];
+
+const filtered_book = books.filter( book => book.genre === 'Fiction')
+console.log(filtered_book);

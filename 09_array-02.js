@@ -34,3 +34,59 @@ const list3= [1,2,4,5]
 
 console.log(Array.of(list1,list2,list3)) //creates array with the elements passed in the of
 
+
+
+// map method
+const numbers = [1, 2, 3, 4, 5];
+let updated_number = numbers.map(element =>{  //if you don't return you will get an array with undefined elements
+    return element+10
+})
+console.log(updated_number);
+
+
+// chaining with map and filter
+
+updated_number = numbers.map(element=> element+10).filter(element=> element==15)
+console.log(updated_number);
+
+
+// reduce method
+/* consider that you are creating a shopping cart funtionality where you have a list of items prices and now you have to add them all for final result*/
+
+const item_prices = [100, 200, 300, 400, 500];
+const total_price = item_prices.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(total_price);
+
+
+const courses = [
+    {
+        name: 'Introduction to Computer Science',
+        price: 100,
+        timeToComplete: '10 weeks'
+    },
+    {
+        name: 'Data Structures and Algorithms',
+        price: 150,
+        timeToComplete: '12 weeks'
+    },
+    {
+        name: 'Web Development',
+        price: 200,
+        timeToComplete: '8 weeks'
+    },
+    {
+        name: 'Database Management Systems',
+        price: 120,
+        timeToComplete: '6 weeks'
+    },
+    {
+        name: 'Operating Systems',
+        price: 130,
+        timeToComplete: '7 weeks'
+    }
+];
+
+const final_value = courses.reduce( (acc,item)=> acc + item.price,0)
+console.log(final_value);
+
+// what happens is that the init value of acc is = 0( we set it) then the item.price is added to the acc with each iteration and in the end the acc value is returned.

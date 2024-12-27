@@ -80,6 +80,8 @@ for (const key in stateCapitals){
 
 // map object is not iterable via for in loop
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// for each loop
 const items = ["apple", "banana", "cherry", "date", "elderberry"];
 items.forEach(function(element){ //this is a callback and hence has no name
     console.log(element)
@@ -89,3 +91,13 @@ items.forEach((element,indexedDB,list)=>{ //this returns index,list and index va
     console.log(element,indexedDB,list);
     
 })
+
+
+//  filter method 
+
+const new_items = items.filter( element => element == 'cherry' || element == 'date')  // returns the element which follow the condition and can also be used to return the operated data
+const another_items = items.filter( element => {
+    return element == 'cherry' || element == 'date'
+})  
+
+console.log(new_items);
