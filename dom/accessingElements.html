@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <div class="parent">
+        <!-- this is a comment see what it does to node list-->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Saturday</div>
+    </div>
+</body>
+<script>
+    let parent = document.querySelector('.parent')
+    console.log(parent) //gives div with class parent
+    console.log(parent.children) //gives a html collection instead of nodelist
+    console.log(parent.children[1].innerHTML)
+
+    for (let element=0 ; element<parent.children.length;element++){
+        console.log(parent.children[element].innerHTML)
+    }
+
+    for (let element of parent.children){
+        element.style.color = 'Red'
+        element.style.backgroundColor = '10px 10px'
+    }
+    console.log(parent.firstElementChild) //get first element from parent directly
+    console.log(parent.lastElementChild) //get last element directly
+
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne.parentElement)
+    console.log(dayOne.nextElementSibling)
+    console.log(parent.childNodes) //each text represent a text 
+
+
+</script>
+</html>

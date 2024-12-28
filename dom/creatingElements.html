@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Elements</title>
+</head>
+<body>
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div)
+    div.className = 'main' //default method to set class
+    div.id = Math.random() * 10 //default method to set id
+    // div.innerText = 'chai aur code'
+    const addtext = document.createTextNode('Chai aur code')
+    div.appendChild(addtext)
+
+    document.body.appendChild(div)
+</script>
+</html>
