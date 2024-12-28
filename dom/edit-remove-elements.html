@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element</title>
+    <ul class="list">
+        <li class="list-item">JavaScript</li>
+    </ul>
+</head>
+<body>
+    <script>
+        function addLanguage(name){
+            const list = document.getElementsByClassName('list')[0]
+            const li = document.createElement('li')
+            li.innerHTML = name;
+            list.appendChild(li)
+        }
+        function removeLanguage(){
+            const list = document.getElementsByClassName('list')[0]
+            const li = list.lastElementChild
+            li.remove()
+        }
+    </script>
+</body>
+</html>l
