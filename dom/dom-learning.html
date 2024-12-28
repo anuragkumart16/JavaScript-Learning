@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Learning</title>
+    <style>
+        .bg-dark{
+            background-color: #121212;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+    <h1 class="heading" id="heading">Anurag Kumar Tiwari</h1>
+    <p>We can Access the id of a node of document using element.id </p>
+    <p>we can access the className of element using element.className</p>
+    <p>we can get attribute of an element using element.getAttribute('attribute-name')</p>
+    <p>we can set attribute of an element using element.setAttribute('attribute-name','attribute-value')</p> 
+
+    <ul class="list">
+        <li class="list-item">Home</li>
+        <li class="list-item">Page</li>
+        <li class="list-item">About</li>
+        <li class="list-item">Help</li>
+        <li class="list-item">Contact</li>
+    </ul>
+    <!-- set attribute will override all the attributes of one type and set the one which you gave 
+     like if an element has class = ' Name game' , when you set another attribute of class it will erase evrything the only write the value which you give
+     to prevent this write older attribute and 'name game shame' as value  -->
+
+
+
+     <!-- the query selector gives nodelist and any other method gives html collection -->
+    <!-- to convert html collection to array  -->
+     <script>
+        // this is the way to convert html collection and node list to array
+        // get the elements
+        let list_items = document.getElementsByClassName('list-item')
+        let list_items_array = Array.from(list_items)
+        list_items_array.forEach(element => {
+            console.log('working')
+        });
+
+
+        // similarly form nodelist
+        list_items = document.querySelectorAll('.list-item')
+        list_items_array = Array.from(list_items)
+        list_items_array.forEach(element=>{
+            console.log(element)
+        })
+     </script>
+</body>
+</html>
