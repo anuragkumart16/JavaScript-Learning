@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+</head>
+
+<body>
+    <form>
+        <p>Try and Guess A Random Number Between 1 and 100</p>
+        <p> you have 10 attempts to guess the right number</p>
+        <h1>Guess Number</h1>
+        <input type="number" id="guess" required>
+        <button id="submit">Submit Guess</button>
+        <p id="previous-guess">Previous Guesses:</p>
+        <p id="attempts">Attempts Remaining : 10</p>
+    </form>
+    <script>
+        // taking a random number
+        const min = 1
+        const max = 100
+        const number = Math.floor((Math.random() * (max - min + 1) + min))
+
+        // setting the attempts
+        let attempts = new Number(10)
+        let previous_attempts = new Array()
+
+        const form = document.getElementsByTagName('form')[0]
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault()
+            const guess = document.getElementById('guess').value
+            // running checks 
+            if (isNaN(guess)|| guess === ''){
+                alert('Enter a Valid Number')
+            }
+            else{
+                if (guess === number){
+                    alert(`You Guessed the Right Number! the number is ${guess}`)
+                }else{
+                    if (attempts===0){
+                        alert(`Ughh, you have exhausted your attempts, Refresh the page to play again.`)
+                        
+                    }else{
+                        alert(`Ummm, The Guessed Number is not Current,Try Again!`)
+                        previous_attempts.push(guess)
+                        attempts -= 1
+                        document.getElementById('attempts').innerHTML = `Guesses Remaining : ${attempts}`
+                        document.getElementById('previous-guess').innerHTML = `Previous Guesses : ${previous_attempts}`
+                    }
+                }
+            }
+            
+        })
+
+    </script>
+</body>
+
+</html>
