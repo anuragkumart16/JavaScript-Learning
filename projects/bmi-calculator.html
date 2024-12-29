@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
 </head>
+
 <body>
     <div class="form">
         <div class="inputgroup">
@@ -18,11 +20,17 @@
         <button id="submit">Submit</button>
     </div>
     <script>
-        document.getElementById('submit').addEventListener('click',(e)=>{
+        document.getElementById('submit').addEventListener('click', (e) => {
             const height = document.getElementById('height').value
             const weight = document.getElementById('weight').value
-            const bmi = weight/height**2
-            alert(Math.floor(bmi))
+            if (height === '' || isNaN(height) || height < 0) {
+                alert('Please Enter A Valid Height')
+            } else if (weight === '' || isNaN(weight) || weight < 0) {
+                alert('Please Enter A Valid weight')
+            } else {
+                const bmi = weight / height ** 2
+                alert(bmi.toFixed(2))
+            }
         })
     </script>
 </body>
