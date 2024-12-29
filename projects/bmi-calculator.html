@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <div class="form">
+        <div class="inputgroup">
+            <label for="height">Height:</label>
+            <input type="number" id="height" placeholder="Height" required>
+        </div>
+        <div class="inputgroup">
+            <label for="height">weight:</label>
+            <input type="number" id="weight" placeholder="Weight" required>
+        </div>
+        <button id="submit">Submit</button>
+    </div>
+    <script>
+        document.getElementById('submit').addEventListener('click',(e)=>{
+            const height = document.getElementById('height').value
+            const weight = document.getElementById('weight').value
+            const bmi = weight/height**2
+            alert(Math.floor(bmi))
+        })
+    </script>
+</body>
+
+</html>
