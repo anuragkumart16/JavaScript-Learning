@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            border: 2px solid black;
+            padding: 20px;
+            width: 200px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #child1, #child2 {
+            border: 1px solid blue;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <button id="button">Click Me</button>
+    event bubbling and event capturing
+    <div id="parent">
+        <div id="child1">Child 1</div>
+        <div id="child2">Child 2</div>
+    </div>
+    <a href="google.com" id="link">Click me</a>
+    <!-- 
+        This HTML file is used to learn about various properties and methods associated with events in JavaScript.
+        Below are the key properties and methods to understand:
+
+        1. type: 
+           - Description: The type of the event (e.g., 'click', 'mouseover').
+           - Example: event.type
+
+        2. timestamp: 
+           - Description: The time at which the event was created.
+           - Example: event.timeStamp
+
+        3. defaultPrevented: 
+           - Description: Indicates whether the event's default action has been prevented.
+           - Example: event.defaultPrevented
+
+        4. target: 
+           - Description: A reference to the object that dispatched the event.
+           - Example: event.target
+
+        5. toElement: 
+           - Description: The element the pointer is moving to (only for mouse events).
+           - Example: event.toElement
+
+        6. srcElement: 
+           - Description: The element that triggered the event (similar to target).
+           - Example: event.srcElement
+
+        7. currentTarget: 
+           - Description: The element to which the event handler is attached.
+           - Example: event.currentTarget
+
+        8. clientX: 
+           - Description: The horizontal coordinate within the application's client area at which the event occurred.
+           - Example: event.clientX
+
+        9. clientY: 
+           - Description: The vertical coordinate within the application's client area at which the event occurred.
+           - Example: event.clientY
+
+        10. screenX: 
+            - Description: The horizontal coordinate of the event relative to the screen.
+            - Example: event.screenX
+
+        11. screenY: 
+            - Description: The vertical coordinate of the event relative to the screen.
+            - Example: event.screenY
+
+        12. altKey: 
+            - Description: Indicates whether the 'Alt' key was pressed when the event was triggered.
+            - Example: event.altKey
+
+        13. ctrlKey: 
+            - Description: Indicates whether the 'Ctrl' key was pressed when the event was triggered.
+            - Example: event.ctrlKey
+
+        14. keyCode: 
+            - Description: The Unicode value of a key that was pressed.
+            - Example: event.keyCode
+
+        15. shiftKey: 
+            - Description: Indicates whether the 'Shift' key was pressed when the event was triggered.
+            - Example: event.shiftKey
+    -->
+    <script>
+        document.getElementById('button').addEventListener('click',e=>{
+            console.log(e)
+        },false) //the last argument given of propagation
+
+        // things to learn in events
+        // type , timestamp ,defaultPrevented, Target, Toelement, srcElement, currentTarget, clientX, ClientY, screenX, screenY
+        // altkey , ctrlkey, keycode, shiftkey
+
+
+        document.getElementById('parent').addEventListener('click', ()=>{
+            console.log('somewhere in side parent was clicked')
+        },false)
+        document.getElementById('child2').addEventListener('click', (e)=>{
+            console.log('child2 was clicked')
+            e.stopPropagation() //prevents the propagation to or from parent element now only the child2 msg will be shown
+        },false)
+
+        // when the parent and child both have propagation to be false(default) the console.log show message of child first then of parent
+        // when it is true the msg of parent is shown first and then of child.
+
+
+        // preventDefault
+        document.getElementById('link').addEventListener('click',(e)=>{
+            e.preventDefault()  //it stops the link to do its default behaviour to carry us to the href page.
+            console.log('link was clicked')
+        })
+    </script>
+</body>
+</html>
