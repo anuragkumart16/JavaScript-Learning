@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="text">Anurag Kumar Tiwari</h1>
+    <button id="stop">Click ME</button>
+    <button id="stopit">Stop myInterval </button>
+    <script>
+        const sayAnurag = function () { 
+            console.log('anurag')
+        }
+        const changetext = function(){
+            document.getElementById('text').innerHTML = 'Anurag'
+        }
+        const changeName = setTimeout(changetext,3000)
+
+        document.getElementById('stop').addEventListener('click',()=>{
+            clearTimeout(changeName) 
+            console.log('stopped the name form changing')
+        })
+
+
+
+        const myInterval = setInterval(sayAnurag,2000)
+        document.getElementById('stopit').addEventListener('click',()=>{
+            clearInterval(myInterval) 
+            console.log('stopped the name form changing')
+        })
+
+    </script>
+</body>
+
+</html>
