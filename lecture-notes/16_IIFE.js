@@ -11,6 +11,6 @@
 })();  //this function gets called automatically. here the semicolen is needed or it won't allow any other thing to happen.
 
 
-( (name)=>{ //unnamed IIFE
+((name)=>{ //unnamed IIFE
     console.log('ANother DB CONNECTED ',name)
 })('ANurag'); //this is how you pass arguments in IIFE

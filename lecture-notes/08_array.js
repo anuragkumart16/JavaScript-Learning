@@ -137,3 +137,6 @@ if (index > -1) {
     array16.splice(index, 1);
 }
 console.log(array16);
+
+
+

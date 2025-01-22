@@ -8,9 +8,10 @@
 </head>
 
 <body>
-    <h1 id="text">Anurag Kumar Tiwari</h1>
-    <button id="stop">Click ME</button>
-    <button id="stopit">Stop myInterval </button>
+    <h1 id="text">Set Timeout</h1>
+    <button id="start-timeout">Start</button>
+    <button id="stop-timeout">Stop </button>
+    <h1 id="anotherText"> Set Interval</h1>
     <script>
         const sayAnurag = function () { 
             console.log('anurag')
@@ -18,19 +19,12 @@
         const changetext = function(){
             document.getElementById('text').innerHTML = 'Anurag'
         }
-        const changeName = setTimeout(changetext,3000)
-
-        document.getElementById('stop').addEventListener('click',()=>{
-            clearTimeout(changeName) 
-            console.log('stopped the name form changing')
+        document.getElementById('start-timeout').addEventListener('click',()=>{
+            const changeName = setTimeout(changetext,3000) //only the reference of the function is passed
         })
 
-
-
-        const myInterval = setInterval(sayAnurag,2000)
-        document.getElementById('stopit').addEventListener('click',()=>{
-            clearInterval(myInterval) 
-            console.log('stopped the name form changing')
+        document.getElementById('stop-timeout').addEventListener('click',()=>{
+            clearTimeout(changeName)
         })
 
     </script>

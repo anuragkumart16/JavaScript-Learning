@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto BG Changer</title>
+</head>
+
+<body>
+    <h1>Background Changer</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        const body = document.body
+        function getRandomHexColor() {
+            return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+        }
+
+        console.log(getRandomHexColor());
+        function bgcontrooler(type) {
+            let myInterval;
+            if (type === 'start') {
+                myInterval = setInterval(() => {
+                    body.style.backgroundColor = getRandomHexColor()
+                }, 1000)
+            }else{
+                clearInterval(myInterval)
+                console.log('elese block running')
+            }
+        }
+
+        document.getElementById('start').addEventListener('click', () => {
+            bgcontrooler('start')
+        })
+        document.getElementById('stop').addEventListener('click', () => {
+            bgcontrooler('stop')
+        })
+    </script>
+</body>
+
+</html>
