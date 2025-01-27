@@ -16,3 +16,7 @@ console.log(element.map((element,index)=>{
         return 'Odd'
     }
 }))
+
+
+
+
